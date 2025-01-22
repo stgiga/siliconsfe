@@ -12,23 +12,19 @@ The SiliconSFe header (`sample_header.bin`) is intended to be used to build a Si
 - a sine wave sample (`sine8192.bin`)
 - a copy of The Fixed Jummbox SoundFont by stgiga (available for download [here](https://musical-artifacts.com/artifacts/2722)).
 
-To build a ROM file, you need to write the header and then zeros until address 0x3147e6. Then write the sine wave sample at address 0x3147e6, and then after that the JBSF data at 0x3187e6. 
+To build a ROM file/sample blob, start by extracting all of the samples from JBSF. 
 
-When this is done, you can then use the SiliconSFe ROM file to test your SiliconSFe code.
+After that, write the header and then zeros until address 0x3232bc. Then write the sine wave sample at address 0x3232bc, and then after that the JBSF samples at 0x3272bc.
+
+Write the JBSF samples one after another, with no spaces. When this is done, you can then use the SiliconSFe ROM file to test your SiliconSFe code.
 
 Because Jummbox is FOSS, and stgiga has released JBSF under a FOSS license (CC-BY-SA 4.0), we are allowed to distribute these samples. No copyrighted samples are used.
 
-### Not implemented
+### Things to do
 
-Because the documentation publicly released by Creative is incomplete, some parts are not implemented in these test ROM files:
-- "id" attribute
-    - It is apparently 4 bytes and corresponds to irom, but irom can be up to 256 bytes in legacy SF2.04. It doesn't make any sense.
-- "checksum" and "checksum2sComplement" attributes
-    - These are "short" (2 byte) values but it is unclear what checksum was being used at the time.
-    - This may have been decided by the implementer of the SiliconSF format.
-- "sampleCompType"
-    - It is unclear what each of the "sample precompensation" type numbers are.
-    - This may also have been decided by the implementer of the SiliconSF format.
+The checksums are calculated based on the actual JBSFv11 bank, and need to be recalculated based on the sample blob. 
+
+### stgiga's prototypes
 
 - stgiga themselves made a "prototype" build of it (basically, stgiga *thinks* it is correct, and hopes they got the endianess of their attempts to populate the `Not Implemented` fields right. Speaking of those fields, stgiga populated them with sensible values.
 - The `id` attribute being 4 bytes *actually* is equivalent to `iver`, NOT the 256-byte `irom`, so stgiga put in a value of 11, hoping the endianess is correct. They also set the revision field to 11.
