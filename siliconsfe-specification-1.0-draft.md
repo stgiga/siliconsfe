@@ -64,18 +64,26 @@ In the legacy SF2.04 specification, Creative declared this "unused", but it seem
 
 This stores the product name, conventionally `SiliconSFe`. It is a UTF-8 string.
 
-### 9.2.11 copyright
+### 9.2.11 sampleCompType
+
+In the legacy SF2.04 specification, Creative said that it indicates the type of sample precompensation that is used in the SiliconSF blob. For the purpose of SiliconSFe, this value is `1` if any kind of sample precompensation is used, and `0` otherwise.
+
+### 9.2.12 style
+
+This is a string that describes the musical style of the contents of the integrated SF bank.
+
+### 9.2.13 copyright
 
 This stores copyright information about the SiliconSFe blob. It is a UTF-8 string.
 
-### 9.2.12 sampleStart
+### 9.2.14 sampleStart
 
 This stores the location in the SiliconSFe blob where the bank samples start.
 
-### 9.2.13 sineWaveStart
+### 9.2.15 sineWaveStart
 
 This stores the location in the SiliconSFe blob where the test sine wave sample starts.
 
-### 9.2.14 sineWave
+### 9.2.16 sineWave
 
 This contains `WORD` values that correspond to a sine wave sample.

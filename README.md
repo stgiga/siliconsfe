@@ -22,7 +22,7 @@ Because Jummbox is FOSS, and stgiga has released JBSF under a FOSS license (CC-B
 
 The checksums are calculated based on the actual JBSFv11 bank, and need to be recalculated based on the sample blob. 
 
-### stgiga's prototypes
+### stgiga's comments
 
 - stgiga themselves made a "prototype" build of it (basically, stgiga *thinks* it is correct, and hopes they got the endianess of their attempts to populate the `Not Implemented` fields right. Speaking of those fields, stgiga populated them with sensible values.
 - The `id` attribute being 4 bytes *actually* is equivalent to `iver`, NOT the 256-byte `irom`, so stgiga put in a value of 11, hoping the endianess is correct. They also set the revision field to 11.
