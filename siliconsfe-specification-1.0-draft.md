@@ -8,7 +8,7 @@ Here is the SiliconSFe header format:
 
 ```c
 typedef struct romHdrType{
-    CHAR romRsrc[4];
+    DWORD romRsrc;
     DWORD romByteSize;
     CHAR interleaveIndex;
     CHAR revision[3];
@@ -30,7 +30,7 @@ typedef struct romHdrType{
 
 ### 9.2.2 romRsrc
 
-In the legacy SF2.04 specification, Creative declared this "unused", however it seems to be a textual version number. To facilitate the usage of this field, `romRsrc` is now defined as a 4-byte UTF-8 string, rather than as a `DWORD`.
+In the legacy SF2.04 specification, Creative declared this "unused", however it is defined in SiliconSFe as the FourCC used by the chunk header type used by the integrated SF bank, for example `RIFF`, `RF64`, `RIFD`, etc.
 
 ### 9.2.3 romByteSize
 
