@@ -12,11 +12,9 @@ The SiliconSFe header (`sample_header.bin`) is intended to be used to build a Si
 - a sine wave sample (`sine8192.bin`)
 - a copy of The Fixed Jummbox SoundFont by stgiga (available for download [here](https://musical-artifacts.com/artifacts/2722)).
 
-To build a ROM file/sample blob, start by extracting all of the samples from JBSF. 
+To build a ROM file, you need to write the header and then zeros until address 0x3147e6. Then write the sine wave sample at address 0x3147e6, and then after that the JBSF data at 0x3187e6. 
 
-After that, write the header and then zeros until address 0x3232bc. Then write the sine wave sample at address 0x3232bc, and then after that the JBSF samples at 0x3272bc.
-
-Write the JBSF samples one after another, with no spaces. When this is done, you can then use the SiliconSFe ROM file to test your SiliconSFe code.
+When this is done, you can then use the SiliconSFe ROM file to test your SiliconSFe code.
 
 Because Jummbox is FOSS, and stgiga has released JBSF under a FOSS license (CC-BY-SA 4.0), we are allowed to distribute these samples. No copyrighted samples are used.
 
