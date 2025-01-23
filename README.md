@@ -18,10 +18,6 @@ When this is done, you can then use the SiliconSFe ROM file to test your Silicon
 
 Because Jummbox is FOSS, and stgiga has released JBSF under a FOSS license (CC-BY-SA 4.0), we are allowed to distribute these samples. No copyrighted samples are used.
 
-### Things to do
-
-The checksums are calculated based on the actual JBSFv11 bank, and need to be recalculated based on the sample blob. 
-
 ### stgiga's comments
 
 - stgiga themselves made a "prototype" build of it (basically, stgiga *thinks* it is correct, and hopes they got the endianess of their attempts to populate the `Not Implemented` fields right. Speaking of those fields, stgiga populated them with sensible values.
