@@ -78,7 +78,7 @@ This stores copyright information about the SiliconSFe blob. It is a UTF-8 strin
 
 ### 9.2.14 sampleStart
 
-This stores the location in the SiliconSFe blob where the bank samples start.
+This stores the location in the SiliconSFe blob where the integrated SF bank starts.
 
 ### 9.2.15 sineWaveStart
 
