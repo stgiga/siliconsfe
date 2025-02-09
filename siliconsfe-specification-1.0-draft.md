@@ -38,7 +38,7 @@ This is an UNSIGNED `DWORD` value with the size of the SiliconSFe ROM blob in by
 
 ### 9.2.4 interleaveIndex
 
-This is used for interleaved ROMs. You can interleave up to 256 ROMs with one SiliconSFe blob.
+This is used for interleaved ROMs. You can interleave up to 256 ROMs with one SiliconSFe blob. Using it to group banks may also be possible, though it doesn't enforce a limit of coexisting SFe banks.
 
 ### 9.2.5 revision
 
